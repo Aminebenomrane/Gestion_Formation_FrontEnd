@@ -77,11 +77,13 @@
           </div>
           <div class="signup-form">
             <div class="title">Signup</div>
-            <form action="#">
+            <form #RegisterForm="ngForm" (ngSubmit)="Register(RegisterForm)">
               <div class="input-boxes">
                 <div class="input-box">
                   <i class="fas fa-user"></i>
                   <input
+                    ngModel
+                    name="firstname"
                     type="text"
                     placeholder="Enter your First Name"
                     required
@@ -90,6 +92,8 @@
                 <div class="input-box">
                   <i class="fas fa-user"></i>
                   <input
+                  ngModel
+                  name="lastname"
                     type="text"
                     placeholder="Enter your Last name"
                     required
@@ -97,16 +101,53 @@
                 </div>
                 <div class="input-box">
                   <i class="fas fa-envelope"></i>
-                  <input type="text" placeholder="Enter your email" required />
+                  <input type="text" 
+                  ngModel
+                  name="email"
+                  placeholder="Enter your email" required />
                 </div>
                 <div class="input-box">
                   <i class="fas fa-lock"></i>
                   <input
                     type="password"
+                    ngModel
+                       name="password"
                     placeholder="Enter your password"
                     required
                   />
                 </div>
+                <div class="input-box">
+                  <i class="fas fa-user"></i>
+                  <input
+                  ngModel
+                  name="age"
+                    type="text"
+                    placeholder="Enter your age"
+                    required
+                  />
+                </div>
+               
+                  
+                  <input
+                  ngModel
+                  name="role"
+                    type="text"
+                    value="User"
+                    required
+                    [hidden]="true"
+                  />
+                
+                <div class="input-box">
+                  <i class="fas fa-user"></i>
+                  <input
+                  ngModel
+                  name="grade"
+                    type="text"
+                    placeholder="Enter your grade"
+                    required
+                  />
+                </div>
+                
                 <div class="button input-box">
                   <input type="submit" value="Sumbit" />
                 </div>
