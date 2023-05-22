@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+    <!-- Creadted by Coding Pakistan Youtube Channel -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Drop-Down Profile Menu - Coding Pakistan</title>
+
+</head>
+<body>
+
+
+    <div class="hero">
+        <nav>
+            <h2 class="logo">E-Learning</h2>
+            <ul>
+                <li> <a href="#"> Home </a></li>
+                <li> <a href="#"> Features </a></li>
+                <li> <a href="#"> About </a></li>
+                <li> <a href="#"> Contact </a></li>
+            </ul>
+            <img src="../assets/images/user.png" class="user-pic" (click)="toggleMenu()">
+
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img src="../assets/images/user.png">
+                        <h3> Ahmed Khan </h3>
+                    </div>
+                    <hr>
+
+                    <a href="#" class="sub-menu-link">
+                        <img src="../assets/images/profile.png">
+                        <p>Edit Profile</p>
+                        <span> > </span>
+                    </a>
+
+                    <a href="#" class="sub-menu-link">
+                        <img src="../assets/images/setting.png">
+                        <p>Settings and Privacy</p>
+                        <span> > </span>
+                    </a>
+
+                    <a href="#" class="sub-menu-link">
+                        <img src="../assets/images/help.png">
+                        <p>Help & Support</p>
+                        <span> > </span>
+                    </a>
+
+                    <a href="#" class="sub-menu-link">
+                        <img src="../assets/images/logout.png">
+                        <p>Logout</p>
+                        <span> > </span>
+                    </a>
+
+                </div>
+            </div>
+
+        </nav><table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+<script>
+    let subMenu = document.getElementById("subMenu");
+    
+    function toggleMenu(){
+        subMenu.classList.toggle("open-menu");
+    }
+</script>
+</body>
+
+</html>

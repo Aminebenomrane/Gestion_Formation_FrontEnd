@@ -1,10 +1,19 @@
+
+
+
+
+
+
 <!DOCTYPE html>
 <!-- Created by CodingLab |www.youtube.com/c/CodingLabYT-->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <!--<title> Login and Registration Form in HTML & CSS | CodingLab </title>-->
-
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+  />
     <!-- Fontawesome CDN Link -->
     <link
       rel="stylesheet"
@@ -41,13 +50,13 @@
         <div class="form-content">
           <div class="login-form">
             <div class="title">Login</div>
-            <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+            <form (ngSubmit)="login()">
               <div class="input-boxes">
                 <div class="input-box">
                   <i class="fas fa-envelope"></i>
                   <input
-                    ngModel
-                    type="text"
+                  [(ngModel)]="loginRequest.email"
+                    type="email"
                     placeholder="Enter your email"
                     required
                     id="email"
@@ -56,13 +65,8 @@
                 </div>
                 <div class="input-box">
                   <i class="fas fa-lock"></i>
-                  <input
-                    ngModel
-                    type="password"
-                    placeholder="Enter your password"
-                    required
-                    name="password"
-                    id="password"
+                  <input placeholder="Enter your password"
+                  type="password" id="password" name="password" [(ngModel)]="loginRequest.password" required
                   />
                 </div>
                 <div class="text"><a href="#">Forgot password?</a></div>
@@ -77,11 +81,13 @@
           </div>
           <div class="signup-form">
             <div class="title">Signup</div>
-            <form action="#">
+            <form (ngSubmit)="register()">
               <div class="input-boxes">
                 <div class="input-box">
                   <i class="fas fa-user"></i>
                   <input
+                  [(ngModel)]="registerRequest.firstname"
+                    name="firstname"
                     type="text"
                     placeholder="Enter your First Name"
                     required
@@ -90,6 +96,8 @@
                 <div class="input-box">
                   <i class="fas fa-user"></i>
                   <input
+                  [(ngModel)]="registerRequest.lastname"
+                  name="lastname"
                     type="text"
                     placeholder="Enter your Last name"
                     required
@@ -97,16 +105,46 @@
                 </div>
                 <div class="input-box">
                   <i class="fas fa-envelope"></i>
-                  <input type="text" placeholder="Enter your email" required />
+                  <input type="text" 
+                  [(ngModel)]="registerRequest.email"
+                  name="email"
+                  placeholder="Enter your email" required />
                 </div>
                 <div class="input-box">
                   <i class="fas fa-lock"></i>
                   <input
                     type="password"
+                    [(ngModel)]="registerRequest.password"
+                       name="password"
                     placeholder="Enter your password"
                     required
                   />
                 </div>
+                <div class="input-box">
+                  <i class="fa fa-calendar" aria-hidden="true"></i>
+                  <input
+                  [(ngModel)]="registerRequest.age"
+                  name="age"
+                    type="text"
+                    placeholder="Enter your age"
+                    required
+                  />
+                </div>
+               
+                  
+                
+                
+                <div class="input-box">
+                  <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                  <input
+                  [(ngModel)]="registerRequest.grade"
+                  name="grade"
+                    type="text"
+                    placeholder="Enter your grade"
+                    required
+                  />
+                </div>
+                
                 <div class="button input-box">
                   <input type="submit" value="Sumbit" />
                 </div>

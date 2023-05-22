@@ -1,0 +1,49 @@
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+    <div class="container-fluid">
+      <div class="d-flex page__box p-3 mt-2" style="color: azure">Liste des formations</div>
+    
+       
+          <!-- Contenu de la colonne 2 -->
+          <div class="example-button-row">
+            <br><br>
+            <button (click)="add()" id="clbbb" mat-raised-button color="primary">Ajouter</button>
+          </div>
+          <br><br>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Id Formation</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Niveau</th>
+                <th>Specialite</th>
+                <th>Date_formation</th>
+                <th>Heure_formation</th>
+                <th>Options</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let dataitem of ListFormations">
+                <td>{{dataitem.idformation}}</td>
+                <td>{{dataitem.titre}}</td>
+                <td>{{dataitem.description}}</td>
+                <td>{{dataitem.niveau}}</td>
+                <td>{{dataitem.specialite}}</td>
+                <td>{{dataitem.date_formation}}</td>
+                <td>{{dataitem.heure_formation}}</td>
+                <td>
+                  <button type="button" class="btn btn-warning" (click)="update(dataitem.idformation)">Modifier</button><br><br>
+                  <button type="button" class="btn btn-danger" (click)="supprimer(dataitem.idformation)">Supprimer</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+   
+  </mat-drawer-content>
+</mat-drawer-container>
